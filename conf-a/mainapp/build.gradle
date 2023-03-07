@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'io.gofannon.gullfoss'
+version '2.0'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    implementation libs.person.provider
+    implementation libs.translator
+
+//    implementation("io.gofannon.gullfoss:person-provider:1.0")
+//    implementation("io.gofannon.gullfoss:translator:1.0")
+}
+
+application {
+    mainClass="io.gofannon.gullfoss.mainapp.MainApplication"
+}
+
+test {
+    useJUnitPlatform()
+}
+
+wrapper {
+    gradleVersion = "8.0.1"
+}

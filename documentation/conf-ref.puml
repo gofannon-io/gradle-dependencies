@@ -1,0 +1,35 @@
+@startuml
+'https://plantuml.com/deployment-diagram
+
+folder copyrighter {
+    file build_gradle {
+        label versions_1
+        label dependencies_1
+    }
+}
+
+
+folder person-provider {
+    file build_gradle {
+        label versions_2
+        label dependencies_2
+    }
+}
+
+
+folder translator {
+    file build_gradle {
+        label versions_3
+        label dependencies_3
+    }
+}
+
+folder mainapp {
+    file build_gradle {
+        label versions_4
+        label dependencies_4
+    }
+}
+
+
+@enduml

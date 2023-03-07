@@ -1,0 +1,40 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+group = 'io.gofannon.gullfoss'
+version '3.0'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    implementation libs.copyrighter
+    implementation libs.annotations
+
+    testRuntimeOnly libs.bundles.testRuntime
+
+    testImplementation libs.bundles.testImplementation
+}
+
+test {
+    useJUnitPlatform()
+}
+
+
+wrapper {
+    gradleVersion = "8.0.1"
+}
+
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
+}
+

@@ -1,0 +1,6 @@
+includeBuild("../mainapp")
+includeBuild("../translator")
+includeBuild("../person-provider")
+includeBuild("../copyrighter")
+includeBuild("../vermgt-plugin")
+includeBuild("../version-platform")

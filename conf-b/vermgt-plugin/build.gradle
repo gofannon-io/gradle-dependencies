@@ -1,0 +1,48 @@
+plugins {
+    id 'version-catalog'
+    id 'maven-publish'
+}
+
+group = 'io.gofannon.gullfoss'
+version '3.0'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+catalog {
+    // declare the aliases, bundles and versions in this block
+    versionCatalog {
+        version("junit", "5.9.2")
+        version("annotations", "24.0.0")
+        version("assertj", "3.24.2")
+        version("copyrighter", "3.0")
+        version("person-provider", "3.0")
+        version("translator", "3.0")
+
+        library("copyrighter", "io.gofannon.gullfoss", "copyrighter").versionRef("copyrighter")
+        library("person-provider", "io.gofannon.gullfoss", "person-provider").versionRef("person-provider")
+        library("translator", "io.gofannon.gullfoss", "translator").versionRef("translator")
+
+        library("annotations", "org.jetbrains", "annotations").versionRef("annotations")
+
+        library("junit-api", "org.junit.jupiter", "junit-jupiter-api").versionRef("junit")
+        library("junit-engine", "org.junit.jupiter", "junit-jupiter-engine").versionRef("junit")
+        library("junit-params", "org.junit.jupiter", "junit-jupiter-params").versionRef("junit")
+        library("assertj-core", "org.assertj", "assertj-core").versionRef("assertj")
+
+        bundle("testImplementation", ["junit-api", "junit-params", "assertj-core"])
+        bundle("testRuntime", ["junit-engine"])
+    }
+}
+
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.versionCatalog
+        }
+    }
+}
+

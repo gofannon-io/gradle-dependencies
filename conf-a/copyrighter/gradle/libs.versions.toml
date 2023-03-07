@@ -1,0 +1,27 @@
+[versions]
+junit = "5.9.2"
+assertj = "3.24.2"
+annotations="24.0.0"
+copyrighter="2.0"
+personProvider = "2.0"
+translator = "2.0"
+
+
+
+[libraries]
+copyrighter = {module="io.gofannon.gullfoss:copyrighter", version.ref="copyrighter"}
+person-provider = {module="io.gofannon.gullfoss:person-provider", version.ref="personProvider"}
+translator = {module="io.gofannon.gullfoss:translator", version.ref="translator"}
+annotations = { module = "org.jetbrains:annotations", version.ref = "annotations"}
+junit-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit"}
+junit-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit"}
+junit-params = { module = "org.junit.jupiter:junit-jupiter-params", version.ref = "junit"}
+assertj-core = { module = "org.assertj:assertj-core", version.ref = "assertj"}
+
+
+[bundles]
+testImplementation = ["junit-api", "junit-params", "assertj-core"]
+testRuntime = ["junit-engine"]
+
+[plugins]
+
