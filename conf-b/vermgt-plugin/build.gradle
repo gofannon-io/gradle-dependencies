@@ -12,7 +12,6 @@ repositories {
 }
 
 catalog {
-    // declare the aliases, bundles and versions in this block
     versionCatalog {
         version("junit", "5.9.2")
         version("annotations", "24.0.0")
@@ -46,3 +45,6 @@ publishing {
     }
 }
 
+wrapper {
+    gradleVersion = "8.0.2"
+}

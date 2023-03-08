@@ -5,5 +5,3 @@ includeBuild("../copyrighter")
 
 includeBuild("../dependencies-plugin")
 
-//includeBuild("../version-platform")
-//includeBuild("../vermgt-plugin")
