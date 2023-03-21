@@ -1,0 +1,12 @@
+dependencyResolutionManagement {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    versionCatalogs {
+        libs {
+            from("io.gofannon.gullfoss:vermgt-plugin:6.0")
+        }
+    }
+}

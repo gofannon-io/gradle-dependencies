@@ -6,7 +6,7 @@ dependencyResolutionManagement {
 
     versionCatalogs {
         libs {
-            from("io.gofannon.gullfoss:dependencies-plugin:5.0")
+            from("io.gofannon.gullfoss:dependency-manager:5.0:toml")
         }
     }
 }

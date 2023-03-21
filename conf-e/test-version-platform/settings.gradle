@@ -1,0 +1,12 @@
+dependencyResolutionManagement {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    versionCatalogs {
+        libs {
+            from("io.gofannon.gullfoss:test-version-manager:6.0")
+        }
+    }
+}

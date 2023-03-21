@@ -1,0 +1,37 @@
+plugins {
+    id 'java-platform'
+    id 'maven-publish'
+}
+
+group = 'io.gofannon.gullfoss'
+version '6.0'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+javaPlatform {
+    allowDependencies()
+}
+
+dependencies {
+    constraints {
+        api platform(libs.test.version.platform)
+        api(libs.copyrighter)
+        api(libs.annotations)
+    }
+}
+
+
+publishing {
+    publications {
+        myPlatform(MavenPublication) {
+            from components.javaPlatform
+        }
+    }
+}
+
+wrapper {
+    gradleVersion = "8.0.2"
+}

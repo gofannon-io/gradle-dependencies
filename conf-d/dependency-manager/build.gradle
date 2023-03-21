@@ -57,12 +57,15 @@ dependencies {
 
 publishing {
     publications {
-        maven(MavenPublication) {
+        platform(MavenPublication) {
+            from components.javaPlatform
+        }
+        catalog(MavenPublication) {
             from components.versionCatalog
         }
     }
 }
 
 wrapper {
-    gradleVersion="8.0.2"
+    gradleVersion = "8.0.2"
 }

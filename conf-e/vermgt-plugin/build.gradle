@@ -1,0 +1,48 @@
+plugins {
+    id 'version-catalog'
+    id 'maven-publish'
+}
+
+group = 'io.gofannon.gullfoss'
+version '6.0'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+catalog {
+    versionCatalog {
+        from("io.gofannon.gullfoss:test-version-manager:6.0")
+
+        version("annotations", "24.0.0")
+        version("copyrighter", "6.0")
+        version("person-provider", "6.0")
+        version("translator", "6.0")
+        version("platform", "6.0")
+        version("test-platform", "6.0")
+
+        library("test-version-platform", "io.gofannon.gullfoss", "test-version-platform").versionRef("test.platform")
+
+        library("version-platform", "io.gofannon.gullfoss", "version-platform").versionRef("platform")
+
+        library("copyrighter", "io.gofannon.gullfoss", "copyrighter").versionRef("copyrighter")
+        library("person-provider", "io.gofannon.gullfoss", "person-provider").versionRef("person-provider")
+        library("translator", "io.gofannon.gullfoss", "translator").versionRef("translator")
+
+        library("annotations", "org.jetbrains", "annotations").versionRef("annotations")
+    }
+}
+
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.versionCatalog
+        }
+    }
+}
+
+wrapper {
+    gradleVersion = "8.0.2"
+}

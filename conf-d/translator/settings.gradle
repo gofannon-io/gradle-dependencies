@@ -6,7 +6,7 @@ dependencyResolutionManagement {
 
     versionCatalogs {
         libs {
-            from("io.gofannon.gullfoss:vermgt-plugin:5.0")
+            from("io.gofannon.gullfoss:dependency-manager:5.0")
         }
     }
 }

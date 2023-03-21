@@ -1,0 +1,61 @@
+@startuml
+'https://plantuml.com/deployment-diagram
+
+node version_catalog
+node java_platform
+
+component application
+component lib_a
+component lib_b
+component lib_c
+component lib_d
+
+
+application -> lib_a
+application -> lib_b
+lib_a -> lib_c
+lib_b -> lib_d
+lib_c -> lib_d
+
+
+application -> java_platform : final dependencies resolution
+lib_a ..> java_platform
+lib_b ..> java_platform
+lib_c ..> java_platform
+lib_d ..> java_platform
+
+application -> version_catalog
+lib_a -> version_catalog
+lib_b -> version_catalog
+lib_c -> version_catalog
+lib_d -> version_catalog
+
+
+
+'actor actor
+'actor/ "actor/"
+'agent agent
+'artifact artifact
+'boundary boundary
+'card card
+'circle circle
+'cloud cloud
+'collections collections
+'component component
+'control control
+'database database
+'entity entity
+'file file
+'folder folder
+'frame frame
+'interface interface
+'label label
+'node node
+'package package
+'queue queue
+'rectangle rectangle
+'stack stack
+'storage storage
+'usecase usecase
+'usecase/ "usecase/"
+@enduml

@@ -1,7 +1,8 @@
-includeBuild("../mainapp")
-includeBuild("../translator")
-includeBuild("../person-provider")
-includeBuild("../copyrighter")
+//includeBuild("../mainapp")
 
-includeBuild("../dependencies-plugin")
+//includeBuild("../translator")
+//includeBuild("../person-provider")
+//includeBuild("../copyrighter")
+
+includeBuild("../dependency-manager")
 

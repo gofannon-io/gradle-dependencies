@@ -12,6 +12,7 @@ repositories {
 }
 
 dependencies {
+
     api platform(libs.version.platform)
 
     implementation libs.annotations
